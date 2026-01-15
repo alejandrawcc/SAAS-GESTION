@@ -88,7 +88,7 @@ export function Login() {
             />
             
             <Group justify="space-between" mb="xl">
-              <Anchor component="button" size="sm" c="blue.6">
+              <Anchor component="button" size="sm" c="blue.6" onClick={() => navigate('/forgot-password')}>
                 ¿Olvidaste tu contraseña?
               </Anchor>
               <Anchor 

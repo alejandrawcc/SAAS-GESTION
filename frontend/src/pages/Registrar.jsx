@@ -48,7 +48,7 @@ export function Registrar() {
         apellido: values.apellido,
         email: values.email,
         password: values.password,
-        microempresa_id: null, // Por defecto para pruebas
+        microempresa_id: 5, // Por defecto para pruebas
         rol_id: parseInt(values.rol_id)
       };
 
@@ -133,7 +133,7 @@ export function Registrar() {
                 label="Rol"
                 placeholder="Selecciona tu rol"
                 data={[
-                  { value: '1', label: 'Super Admin' },
+                  /*{ value: '1', label: 'Super Admin' },*/
                   { value: '2', label: 'Administrador' },
                   { value: '3', label: 'Vendedor' }
                 ]}

@@ -18,10 +18,12 @@ app.use(express.json());
 // Importar rutas
 const authRoutes = require('./routes/authRoutes');
 const usuarioRoutes = require('./routes/usuarioRoutes');
+const passwordRoutes = require('./routes/passwordRoutes');
 
 // Usar rutas
 app.use('/api/auth', authRoutes);
 app.use('/api/usuarios', usuarioRoutes);
+app.use('/api/password', passwordRoutes); 
 
 // Ruta de prueba
 app.get('/api/test', (req, res) => {
@@ -48,4 +50,5 @@ app.listen(PORT, () => {
     console.log(`   http://localhost:${PORT}`);
     console.log(`   http://127.0.0.1:${PORT}`);
     console.log(`✅ Test endpoint: http://localhost:${PORT}/api/test`);
+    console.log(`✅ Endpoints de recuperación de contraseña activos`);
 });

@@ -10,9 +10,11 @@ import '@mantine/notifications/styles.css';
 import { Home } from './pages/Home';
 import { Login } from './pages/Login';
 import { Registrar } from './pages/Registrar';
+import { ForgotPassword } from './pages/ForgotPassword';
+import { ResetPassword } from './pages/ResetPassword'; // <-- Importar esta
 import { MainLayout } from './components/MainLayout';
 import Dashboard from './pages/Dashboard';
-import Usuarios from './pages/Usuarios'; 
+import Usuarios from './pages/Usuarios';
 import { getCurrentUser } from './services/auth';
 
 // Tema personalizado
@@ -47,8 +49,6 @@ const PublicRoute = ({ children }) => {
 
 function App() {
   return (
-    <div className="app-container">
-
     <MantineProvider theme={theme}>
       <Notifications position="top-right" zIndex={2000} />
       <BrowserRouter>
@@ -70,6 +70,25 @@ function App() {
             element={
               <PublicRoute>
                 <Registrar />
+              </PublicRoute>
+            } 
+          />
+
+          {/* Rutas de recuperación de contraseña */}
+          <Route 
+            path="/forgot-password" 
+            element={
+              <PublicRoute>
+                <ForgotPassword />
+              </PublicRoute>
+            } 
+          />
+
+          <Route 
+            path="/reset-password/:token" 
+            element={
+              <PublicRoute>
+                <ResetPassword />
               </PublicRoute>
             } 
           />
@@ -98,8 +117,6 @@ function App() {
         </Routes>
       </BrowserRouter>
     </MantineProvider>
-    </div>
-
   );
 }
 

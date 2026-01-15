@@ -17,11 +17,11 @@ exports.registrar = async (req, res) => {
         const salt = await bcrypt.genSalt(10);
         const hashedPassword = await bcrypt.hash(password, salt);
 
-        //Prueba superadmin
+        /*//Prueba superadmin
         let empresaId = microempresa_id; 
         if (parseInt(rol_id) === 1) {
             empresaId = null;
-        }
+        }*/
 
         //Insertar en la base de datos
         await db.execute(
